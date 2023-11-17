@@ -4,7 +4,6 @@ const endTime = 17;
 // Display current day at the top of page
 var currentDay = dayjs().format("dddd, MMMM D");
 $("#currentDay").text(currentDay);
-$("#currentDay").text(currentDay);
 
 // Load tasks from local storage
 function loadTasks() {
@@ -43,15 +42,21 @@ for (let hour = startTime; hour <= endTime; hour++) {
     bgColour = 'future'; // Future time
   }
 
-  // Create new rows with incrementing times
-  const newRow = `<tr class="time-block">
-                    <td class="hour">${formattedTime}</td>
-                    <td class="task description"><input type="text" id="task${hour}" /></td>
-                    <td class="saveBtn"><button onclick="saveTask(${hour})"><i class="fas fa-save"></i>
-                    </button></td> 
-                 </tr>`;
-
-  const $newRow = $(newRow); // Convert the string to a jQuery object
-  $newRow.find('.task input').addClass(bgColour); // Add background colour to task
-  $(".container table").append($newRow);
+  // Create new divs with incrementing times
+  const newTimeBlock = `<div class="time-block ${bgColour} row">
+                          <div class="hour col">${formattedTime}</div>
+                          <div class="col">
+                            <input type="text" id="task${hour}" class="form-control task-input ${bgColour}"/>
+                          </div>
+                          <div class="col">
+                            <button onclick="saveTask(${hour})" class="btn btn-primary saveBtn">
+                              <i class="fas fa-save"></i>
+                            </button>
+                          </div> 
+                      </div>`;
+  
+  $("#timeBlocksContainer").append(newTimeBlock);                    
+  // const $newRow = $(newRow); // Convert the string to a jQuery object
+  // $newRow.find('.task input').addClass(bgColour); // Add background colour to task
+  // $(".container table").append($newRow);
 }
