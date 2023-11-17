@@ -16,4 +16,4 @@ Deployed Application: https://lucybonfield.github.io/Daily-Planner-App/
 
 * Persists events between refreshes of a page
 
-<img width="902" alt="Screenshot 2023-11-17 at 18 46 26" src="https://github.com/lucybonfield/Daily-Planner-App/assets/40248317/3a7ef31a-439f-49bd-8925-37f52e53443a">
+<img width="1448" alt="Screenshot 2023-11-17 at 22 03 24" src="https://github.com/lucybonfield/Daily-Planner-App/assets/40248317/583eaf0c-db6d-4f74-8257-9004befeaf40">
